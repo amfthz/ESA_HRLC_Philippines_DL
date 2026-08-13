@@ -1,0 +1,102 @@
+# =====================================================
+# ESA_CCI_UNIPV - Dataset Configuration
+# =====================================================
+
+# -------------------------------
+# Dataset root and region
+# -------------------------------
+dataset:
+  base_path: "/home/silvia/Desktop/GIGI/ESA_CCI_PROJECT/training_dataset_jstars_and_50_tiles_merged"
+  regions: ["amazonia"]
+
+# -------------------------------
+# Derived data (tile-level)
+# -------------------------------
+derived:
+  splits_base_dir: "configs/splits"
+  tile_stats_file: "tile_stats.json"
+  tile_split_file: "tile_split.json"
+
+# -------------------------------
+# Tile clustering & split policy
+# -------------------------------
+tile_split:
+  enabled: true
+
+  clustering:
+    method: "kmeans"
+    n_clusters: 4
+    random_state: 42
+
+  split:
+    val_fraction: 0.1
+    random_state: 42
+
+# -------------------------------
+# Temporal settings
+# -------------------------------
+temporal:
+  t_len: 28
+
+# -------------------------------
+# Spatial settings
+# -------------------------------
+spatial:
+  out_size: [512, 512]  # Output spatial size BEFORE patch extraction.
+  # Recommended settings:
+  #   - 10 m data  -> [512, 512]
+  #   - 30 m data  -> [256, 256]
+  # Ensure consistency with patch_size and stride below.
+
+  # Polarizations to USE (ORDER MATTERS for channels)
+  # Example:
+  #   ['VH']        -> 28 channels
+  #   ['VV']        -> 28 channels
+  #   ['VH', 'VV']  -> 56 channels
+  polarizations: ['VH']
+
+  # Explicit polarization → band index mapping (0-based)
+  # Applied when reading each feature GeoTIFF
+  pol_map:
+    VH: 0
+    VV: 1
+
+  return_y_long: false
+
+# -------------------------------
+# Patching settings
+# -------------------------------
+patching:
+  enabled: true
+  patch_size: [256, 256]  # Patch size AFTER resizing (must divide out_size exactly).
+  # Recommended settings:
+  #   - 10 m data  -> [256, 256]
+  #   - 30 m data  -> [128, 128]
+  stride: 128  # Sliding window stride (controls overlap between patches).
+  # Recommended settings:
+  #   - 10 m data  -> 128
+  #   - 30 m data  -> 64
+  # Typically set to patch_size / 2 for 50% overlap.
+
+# -------------------------------
+# Data augmentation (applied in Dataset)
+# -------------------------------
+augmentation:
+  enabled: true
+  horizontal_flip: true
+  vertical_flip: true
+
+# -------------------------------
+# DataLoader settings
+# -------------------------------
+dataloader:
+  batch_size: 1
+  num_workers: 2
+  pin_memory: true
+
+# -------------------------------
+# Sanity checks / debug
+# -------------------------------
+sanity_check:
+  num_samples: 10
+  seed: 42

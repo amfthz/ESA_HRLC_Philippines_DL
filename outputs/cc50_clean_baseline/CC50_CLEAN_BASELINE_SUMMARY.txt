@@ -1,0 +1,62 @@
+CC50 CLEAN SWIN-UNETR BASELINE
+==============================
+
+Dataset
+-------
+Reference version: conservative Shrubland rescue CC50
+Train scenes: 249
+Validation scenes: 28
+Train patches: 2241
+Validation patches: 252
+Validation Shrubland pixels: 3716
+Validation scenes containing Shrubland: 5
+
+Training
+--------
+Maximum epochs: 100
+Early stopping epoch: 78
+Best checkpoint epoch: 53
+Best patch-level validation mIoU: 0.3696774
+Loss: class-weighted CrossEntropyLoss
+Shrubland class weight: 3.59988070
+Sampler: disabled
+
+Full-scene unique-pixel evaluation
+----------------------------------
+Overall accuracy: 0.833297
+Macro precision: 0.549740
+Macro recall: 0.583169
+Macro F1: 0.546032
+Mean IoU: 0.433949
+Cohen kappa: 0.770260
+
+Shrubland results
+-----------------
+Ground-truth support: 3716
+Predicted Shrubland pixels: 0
+True positives: 0
+False positives: 0
+False negatives: 3716
+Precision: 0.000000
+Recall: 0.000000
+F1: 0.000000
+IoU: 0.000000
+
+True Shrubland prediction destinations
+--------------------------------------
+Built-up: 28 pixels, 0.753%
+Cropland: 82 pixels, 2.207%
+Forest: 2714 pixels, 73.036%
+Grassland: 888 pixels, 23.897%
+Shrubland: 0 pixels, 0.000%
+Wetland: 0 pixels, 0.000%
+Water: 0 pixels, 0.000%
+Bareland: 4 pixels, 0.108%
+Mangrove Forest: 0 pixels, 0.000%
+
+Conclusion
+----------
+The CC50 reference revision alone did not resolve Shrubland collapse.
+The model assigned 96.933% of true Shrubland pixels to Forest or
+Grassland and never predicted class 5. A targeted rare-class learning
+strategy is required.

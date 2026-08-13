@@ -1,0 +1,23 @@
+# OS / editors
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+
+# Temporary runtime files
+*.lock
+tmp/
+temp/
+
+# Large model checkpoints remain on lab storage
+*.pt
+*.pth
+*.ckpt

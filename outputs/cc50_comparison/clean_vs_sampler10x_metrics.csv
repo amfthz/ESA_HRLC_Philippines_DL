@@ -1,0 +1,17 @@
+metric,cc50_clean,cc50_sampler10x,difference_sampler_minus_clean
+best_patch_val_miou,0.3696774,0.3524742,-0.0172032
+overall_accuracy,0.833297,0.803817,-0.029480
+macro_precision,0.549740,0.505413,-0.044327
+macro_recall,0.583169,0.551970,-0.031199
+macro_f1,0.546032,0.512222,-0.033810
+mean_iou,0.433949,0.403811,-0.030138
+cohen_kappa,0.770260,0.732253,-0.038007
+shrubland_support,3716,3716,0
+shrubland_predicted_pixels,0,26056,26056
+shrubland_true_positive,0,39,39
+shrubland_false_positive,0,26017,26017
+shrubland_false_negative,3716,3677,-39
+shrubland_precision,0.000000,0.001497,0.001497
+shrubland_recall,0.000000,0.010495,0.010495
+shrubland_f1,0.000000,0.002620,0.002620
+shrubland_iou,0.000000,0.001312,0.001312

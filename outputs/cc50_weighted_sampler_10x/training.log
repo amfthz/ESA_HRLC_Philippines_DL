@@ -1,0 +1,342 @@
+============================================================
+[EXPERIMENT] CC50 WeightedRandomSampler 10x
+[START] gio  6 ago 2026, 11.58.33, CEST
+[PROJECT] /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline
+[PYTHON] /home/tlcrs/anaconda3/envs/swinunet_philippines/bin/python
+[MODULE] src.train_cc50_sampler10x
+[CHECKPOINT] /home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/checkpoints_cc50_weighted_sampler_10x
+[DATASET CONFIG HASH]
+a903926a32736cac4bde3f477280847fc82720978634eebcb36176b4cf655f6f  configs/dataset.yaml
+[TRAINING CONFIG HASH]
+0d2d84677c14674dc3854baab2866b60085ef3230028b83585147bcf772cf36c  configs/training.yaml
+[SPLIT HASH]
+f6988d7bc2604306c37e089aeed3a7682fe2e316be93f173c7246d8ceb6e0e4c  configs/splits/philippines/tile_split.json
+[CLASS WEIGHTS HASH]
+7dea0e7c8b69be0c5c39d554e297134722a269319c048ab511e946d820a0a313  configs/splits/philippines/class_weights.json
+[SAMPLER SCRIPT HASH]
+be46cd264b5fa30e5ba329299091403905c52689d724399585ba238f32f75d7d  src/train_cc50_sampler10x.py
+============================================================
+[SETUP] Ensuring tile split and class weights for all regions...
+[run_tile_split] Region: philippines
+  Split already exists.
+  Class weights already exist.
+  DONE
+
+Class weights : configs/splits/philippines/class_weights.json
+
+[DATASET] Region: philippines
+Using device: cuda
+[INDEXING] JSON files: 277 | valid samples: 277 | skipped: 0
+[INDEXING] JSON files: 277 | valid samples: 277 | skipped: 0
+[TILE SPLIT] Train tiles: 249 | Val tiles: 28
+Building dataset:   0%|                                                     | 0/249 [00:00<?, ?it/s]Building dataset:   0%|▏                                            | 1/249 [00:00<01:01,  4.05it/s]Building dataset:   1%|▎                                            | 2/249 [00:00<00:52,  4.74it/s]Building dataset:   1%|▌                                            | 3/249 [00:00<00:47,  5.15it/s]Building dataset:   2%|▋                                            | 4/249 [00:00<00:47,  5.11it/s]Building dataset:   2%|▉                                            | 5/249 [00:00<00:45,  5.36it/s]Building dataset:   2%|█                                            | 6/249 [00:01<00:45,  5.38it/s]Building dataset:   3%|█▎                                           | 7/249 [00:01<00:43,  5.53it/s]Building dataset:   3%|█▍                                           | 8/249 [00:01<00:42,  5.69it/s]Building dataset:   4%|█▋                                           | 9/249 [00:01<00:41,  5.75it/s]Building dataset:   4%|█▊                                          | 10/249 [00:01<00:40,  5.85it/s]Building dataset:   4%|█▉                                          | 11/249 [00:01<00:40,  5.88it/s]Building dataset:   5%|██                                          | 12/249 [00:02<00:41,  5.71it/s]Building dataset:   5%|██▎                                         | 13/249 [00:02<00:41,  5.72it/s]Building dataset:   6%|██▍                                         | 14/249 [00:02<00:40,  5.73it/s]Building dataset:   6%|██▋                                         | 15/249 [00:02<00:40,  5.73it/s]Building dataset:   6%|██▊                                         | 16/249 [00:02<00:41,  5.68it/s]Building dataset:   7%|███                                         | 17/249 [00:03<00:40,  5.67it/s]Building dataset:   7%|███▏                                        | 18/249 [00:03<00:40,  5.71it/s]Building dataset:   8%|███▎                                        | 19/249 [00:03<00:40,  5.69it/s]Building dataset:   8%|███▌                                        | 20/249 [00:03<00:39,  5.74it/s]Building dataset:   8%|███▋                                        | 21/249 [00:03<00:39,  5.77it/s]Building dataset:   9%|███▉                                        | 22/249 [00:03<00:40,  5.59it/s]Building dataset:   9%|████                                        | 23/249 [00:04<00:40,  5.58it/s]Building dataset:  10%|████▏                                       | 24/249 [00:04<00:39,  5.66it/s]Building dataset:  10%|████▍                                       | 25/249 [00:04<00:40,  5.59it/s]Building dataset:  10%|████▌                                       | 26/249 [00:04<00:39,  5.65it/s]Building dataset:  11%|████▊                                       | 27/249 [00:04<00:38,  5.81it/s]Building dataset:  11%|████▉                                       | 28/249 [00:04<00:37,  5.83it/s]Building dataset:  12%|█████                                       | 29/249 [00:05<00:37,  5.84it/s]Building dataset:  12%|█████▎                                      | 30/249 [00:05<00:37,  5.78it/s]Building dataset:  12%|█████▍                                      | 31/249 [00:05<00:37,  5.77it/s]Building dataset:  13%|█████▋                                      | 32/249 [00:05<00:37,  5.76it/s]Building dataset:  13%|█████▊                                      | 33/249 [00:05<00:37,  5.74it/s]Building dataset:  14%|██████                                      | 34/249 [00:06<00:36,  5.84it/s]Building dataset:  14%|██████▏                                     | 35/249 [00:06<00:36,  5.84it/s]Building dataset:  14%|██████▎                                     | 36/249 [00:06<00:36,  5.89it/s]Building dataset:  15%|██████▌                                     | 37/249 [00:06<00:35,  5.93it/s]Building dataset:  15%|██████▋                                     | 38/249 [00:06<00:35,  5.89it/s]Building dataset:  16%|██████▉                                     | 39/249 [00:06<00:35,  5.89it/s]Building dataset:  16%|███████                                     | 40/249 [00:07<00:36,  5.74it/s]Building dataset:  16%|███████▏                                    | 41/249 [00:07<00:36,  5.77it/s]Building dataset:  17%|███████▍                                    | 42/249 [00:07<00:36,  5.72it/s]Building dataset:  17%|███████▌                                    | 43/249 [00:07<00:35,  5.74it/s]Building dataset:  18%|███████▊                                    | 44/249 [00:07<00:35,  5.77it/s]Building dataset:  18%|███████▉                                    | 45/249 [00:07<00:35,  5.82it/s]Building dataset:  18%|████████▏                                   | 46/249 [00:08<00:34,  5.81it/s]Building dataset:  19%|████████▎                                   | 47/249 [00:08<00:34,  5.79it/s]Building dataset:  19%|████████▍                                   | 48/249 [00:08<00:34,  5.87it/s]Building dataset:  20%|████████▋                                   | 49/249 [00:08<00:34,  5.83it/s]Building dataset:  20%|████████▊                                   | 50/249 [00:08<00:35,  5.67it/s]Building dataset:  20%|█████████                                   | 51/249 [00:08<00:34,  5.77it/s]Building dataset:  21%|█████████▏                                  | 52/249 [00:09<00:33,  5.80it/s]Building dataset:  21%|█████████▎                                  | 53/249 [00:09<00:34,  5.75it/s]Building dataset:  22%|█████████▌                                  | 54/249 [00:09<00:34,  5.72it/s]Building dataset:  22%|█████████▋                                  | 55/249 [00:09<00:33,  5.73it/s]Building dataset:  22%|█████████▉                                  | 56/249 [00:09<00:33,  5.73it/s]Building dataset:  23%|██████████                                  | 57/249 [00:10<00:33,  5.68it/s]Building dataset:  23%|██████████▏                                 | 58/249 [00:10<00:33,  5.73it/s]Building dataset:  24%|██████████▍                                 | 59/249 [00:10<00:33,  5.72it/s]Building dataset:  24%|██████████▌                                 | 60/249 [00:10<00:33,  5.71it/s]Building dataset:  24%|██████████▊                                 | 61/249 [00:10<00:32,  5.78it/s]Building dataset:  25%|██████████▉                                 | 62/249 [00:10<00:31,  5.86it/s]Building dataset:  25%|███████████▏                                | 63/249 [00:11<00:32,  5.79it/s]Building dataset:  26%|███████████▎                                | 64/249 [00:11<00:31,  5.81it/s]Building dataset:  26%|███████████▍                                | 65/249 [00:11<00:32,  5.71it/s]Building dataset:  27%|███████████▋                                | 66/249 [00:11<00:31,  5.76it/s]Building dataset:  27%|███████████▊                                | 67/249 [00:11<00:32,  5.66it/s]Building dataset:  27%|████████████                                | 68/249 [00:11<00:31,  5.78it/s]Building dataset:  28%|████████████▏                               | 69/249 [00:12<00:31,  5.76it/s]Building dataset:  28%|████████████▎                               | 70/249 [00:12<00:31,  5.72it/s]Building dataset:  29%|████████████▌                               | 71/249 [00:12<00:31,  5.73it/s]Building dataset:  29%|████████████▋                               | 72/249 [00:12<00:30,  5.83it/s]Building dataset:  29%|████████████▉                               | 73/249 [00:12<00:31,  5.64it/s]Building dataset:  30%|█████████████                               | 74/249 [00:12<00:30,  5.66it/s]Building dataset:  30%|█████████████▎                              | 75/249 [00:13<00:30,  5.72it/s]Building dataset:  31%|█████████████▍                              | 76/249 [00:13<00:30,  5.66it/s]Building dataset:  31%|█████████████▌                              | 77/249 [00:13<00:30,  5.67it/s]Building dataset:  31%|█████████████▊                              | 78/249 [00:13<00:30,  5.59it/s]Building dataset:  32%|█████████████▉                              | 79/249 [00:13<00:30,  5.62it/s]Building dataset:  32%|██████████████▏                             | 80/249 [00:14<00:30,  5.57it/s]Building dataset:  33%|██████████████▎                             | 81/249 [00:14<00:29,  5.61it/s]Building dataset:  33%|██████████████▍                             | 82/249 [00:14<00:29,  5.61it/s]Building dataset:  33%|██████████████▋                             | 83/249 [00:14<00:29,  5.68it/s]Building dataset:  34%|██████████████▊                             | 84/249 [00:14<00:29,  5.66it/s]Building dataset:  34%|███████████████                             | 85/249 [00:14<00:28,  5.68it/s]Building dataset:  35%|███████████████▏                            | 86/249 [00:15<00:28,  5.62it/s]Building dataset:  35%|███████████████▎                            | 87/249 [00:15<00:28,  5.61it/s]Building dataset:  35%|███████████████▌                            | 88/249 [00:15<00:28,  5.74it/s]Building dataset:  36%|███████████████▋                            | 89/249 [00:15<00:27,  5.74it/s]Building dataset:  36%|███████████████▉                            | 90/249 [00:15<00:27,  5.74it/s]Building dataset:  37%|████████████████                            | 91/249 [00:15<00:27,  5.71it/s]Building dataset:  37%|████████████████▎                           | 92/249 [00:16<00:27,  5.70it/s]Building dataset:  37%|████████████████▍                           | 93/249 [00:16<00:27,  5.68it/s]Building dataset:  38%|████████████████▌                           | 94/249 [00:16<00:27,  5.71it/s]Building dataset:  38%|████████████████▊                           | 95/249 [00:16<00:26,  5.74it/s]Building dataset:  39%|████████████████▉                           | 96/249 [00:16<00:26,  5.72it/s]Building dataset:  39%|█████████████████▏                          | 97/249 [00:17<00:26,  5.77it/s]Building dataset:  39%|█████████████████▎                          | 98/249 [00:17<00:26,  5.79it/s]Building dataset:  40%|█████████████████▍                          | 99/249 [00:17<00:25,  5.83it/s]Building dataset:  40%|█████████████████▎                         | 100/249 [00:17<00:25,  5.80it/s]Building dataset:  41%|█████████████████▍                         | 101/249 [00:17<00:25,  5.75it/s]Building dataset:  41%|█████████████████▌                         | 102/249 [00:17<00:25,  5.73it/s]Building dataset:  41%|█████████████████▊                         | 103/249 [00:18<00:25,  5.76it/s]Building dataset:  42%|█████████████████▉                         | 104/249 [00:18<00:24,  5.80it/s]Building dataset:  42%|██████████████████▏                        | 105/249 [00:18<00:24,  5.87it/s]Building dataset:  43%|██████████████████▎                        | 106/249 [00:18<00:25,  5.72it/s]Building dataset:  43%|██████████████████▍                        | 107/249 [00:18<00:25,  5.64it/s]Building dataset:  43%|██████████████████▋                        | 108/249 [00:18<00:25,  5.60it/s]Building dataset:  44%|██████████████████▊                        | 109/249 [00:19<00:25,  5.45it/s]Building dataset:  44%|██████████████████▉                        | 110/249 [00:19<00:25,  5.52it/s]Building dataset:  45%|███████████████████▏                       | 111/249 [00:19<00:25,  5.36it/s]Building dataset:  45%|███████████████████▎                       | 112/249 [00:19<00:26,  5.19it/s]Building dataset:  45%|███████████████████▌                       | 113/249 [00:19<00:26,  5.19it/s]Building dataset:  46%|███████████████████▋                       | 114/249 [00:20<00:25,  5.29it/s]Building dataset:  46%|███████████████████▊                       | 115/249 [00:20<00:24,  5.45it/s]Building dataset:  47%|████████████████████                       | 116/249 [00:20<00:24,  5.52it/s]Building dataset:  47%|████████████████████▏                      | 117/249 [00:20<00:24,  5.41it/s]Building dataset:  47%|████████████████████▍                      | 118/249 [00:20<00:23,  5.46it/s]Building dataset:  48%|████████████████████▌                      | 119/249 [00:20<00:23,  5.44it/s]Building dataset:  48%|████████████████████▋                      | 120/249 [00:21<00:23,  5.42it/s]Building dataset:  49%|████████████████████▉                      | 121/249 [00:21<00:23,  5.46it/s]Building dataset:  49%|█████████████████████                      | 122/249 [00:21<00:24,  5.28it/s]Building dataset:  49%|█████████████████████▏                     | 123/249 [00:21<00:23,  5.30it/s]Building dataset:  50%|█████████████████████▍                     | 124/249 [00:21<00:23,  5.37it/s]Building dataset:  50%|█████████████████████▌                     | 125/249 [00:22<00:22,  5.43it/s]Building dataset:  51%|█████████████████████▊                     | 126/249 [00:22<00:22,  5.37it/s]Building dataset:  51%|█████████████████████▉                     | 127/249 [00:22<00:22,  5.44it/s]Building dataset:  51%|██████████████████████                     | 128/249 [00:22<00:22,  5.47it/s]Building dataset:  52%|██████████████████████▎                    | 129/249 [00:22<00:22,  5.40it/s]Building dataset:  52%|██████████████████████▍                    | 130/249 [00:23<00:21,  5.48it/s]Building dataset:  53%|██████████████████████▌                    | 131/249 [00:23<00:21,  5.58it/s]Building dataset:  53%|██████████████████████▊                    | 132/249 [00:23<00:20,  5.61it/s]Building dataset:  53%|██████████████████████▉                    | 133/249 [00:23<00:20,  5.61it/s]Building dataset:  54%|███████████████████████▏                   | 134/249 [00:23<00:20,  5.57it/s]Building dataset:  54%|███████████████████████▎                   | 135/249 [00:23<00:20,  5.58it/s]Building dataset:  55%|███████████████████████▍                   | 136/249 [00:24<00:20,  5.58it/s]Building dataset:  55%|███████████████████████▋                   | 137/249 [00:24<00:19,  5.62it/s]Building dataset:  55%|███████████████████████▊                   | 138/249 [00:24<00:20,  5.39it/s]Building dataset:  56%|████████████████████████                   | 139/249 [00:24<00:20,  5.34it/s]Building dataset:  56%|████████████████████████▏                  | 140/249 [00:24<00:20,  5.36it/s]Building dataset:  57%|████████████████████████▎                  | 141/249 [00:25<00:19,  5.42it/s]Building dataset:  57%|████████████████████████▌                  | 142/249 [00:25<00:19,  5.47it/s]Building dataset:  57%|████████████████████████▋                  | 143/249 [00:25<00:19,  5.53it/s]Building dataset:  58%|████████████████████████▊                  | 144/249 [00:25<00:19,  5.43it/s]Building dataset:  58%|█████████████████████████                  | 145/249 [00:25<00:19,  5.42it/s]Building dataset:  59%|█████████████████████████▏                 | 146/249 [00:25<00:19,  5.41it/s]Building dataset:  59%|█████████████████████████▍                 | 147/249 [00:26<00:18,  5.46it/s]Building dataset:  59%|█████████████████████████▌                 | 148/249 [00:26<00:18,  5.50it/s]Building dataset:  60%|█████████████████████████▋                 | 149/249 [00:26<00:18,  5.37it/s]Building dataset:  60%|█████████████████████████▉                 | 150/249 [00:26<00:18,  5.37it/s]Building dataset:  61%|██████████████████████████                 | 151/249 [00:26<00:18,  5.34it/s]Building dataset:  61%|██████████████████████████▏                | 152/249 [00:27<00:18,  5.30it/s]Building dataset:  61%|██████████████████████████▍                | 153/249 [00:27<00:18,  5.30it/s]Building dataset:  62%|██████████████████████████▌                | 154/249 [00:27<00:17,  5.39it/s]Building dataset:  62%|██████████████████████████▊                | 155/249 [00:27<00:17,  5.40it/s]Building dataset:  63%|██████████████████████████▉                | 156/249 [00:27<00:17,  5.27it/s]Building dataset:  63%|███████████████████████████                | 157/249 [00:27<00:17,  5.36it/s]Building dataset:  63%|███████████████████████████▎               | 158/249 [00:28<00:16,  5.43it/s]Building dataset:  64%|███████████████████████████▍               | 159/249 [00:28<00:16,  5.56it/s]Building dataset:  64%|███████████████████████████▋               | 160/249 [00:28<00:15,  5.59it/s]Building dataset:  65%|███████████████████████████▊               | 161/249 [00:28<00:15,  5.63it/s]Building dataset:  65%|███████████████████████████▉               | 162/249 [00:28<00:15,  5.72it/s]Building dataset:  65%|████████████████████████████▏              | 163/249 [00:29<00:15,  5.65it/s]Building dataset:  66%|████████████████████████████▎              | 164/249 [00:29<00:15,  5.46it/s]Building dataset:  66%|████████████████████████████▍              | 165/249 [00:29<00:15,  5.49it/s]Building dataset:  67%|████████████████████████████▋              | 166/249 [00:29<00:15,  5.52it/s]Building dataset:  67%|████████████████████████████▊              | 167/249 [00:29<00:14,  5.62it/s]Building dataset:  67%|█████████████████████████████              | 168/249 [00:29<00:14,  5.63it/s]Building dataset:  68%|█████████████████████████████▏             | 169/249 [00:30<00:14,  5.64it/s]Building dataset:  68%|█████████████████████████████▎             | 170/249 [00:30<00:13,  5.74it/s]Building dataset:  69%|█████████████████████████████▌             | 171/249 [00:30<00:13,  5.73it/s]Building dataset:  69%|█████████████████████████████▋             | 172/249 [00:30<00:13,  5.70it/s]Building dataset:  69%|█████████████████████████████▉             | 173/249 [00:30<00:13,  5.61it/s]Building dataset:  70%|██████████████████████████████             | 174/249 [00:31<00:13,  5.58it/s]Building dataset:  70%|██████████████████████████████▏            | 175/249 [00:31<00:13,  5.54it/s]Building dataset:  71%|██████████████████████████████▍            | 176/249 [00:31<00:13,  5.58it/s]Building dataset:  71%|██████████████████████████████▌            | 177/249 [00:31<00:12,  5.57it/s]Building dataset:  71%|██████████████████████████████▋            | 178/249 [00:31<00:12,  5.54it/s]Building dataset:  72%|██████████████████████████████▉            | 179/249 [00:31<00:12,  5.56it/s]Building dataset:  72%|███████████████████████████████            | 180/249 [00:32<00:12,  5.60it/s]Building dataset:  73%|███████████████████████████████▎           | 181/249 [00:32<00:11,  5.67it/s]Building dataset:  73%|███████████████████████████████▍           | 182/249 [00:32<00:11,  5.64it/s]Building dataset:  73%|███████████████████████████████▌           | 183/249 [00:32<00:11,  5.60it/s]Building dataset:  74%|███████████████████████████████▊           | 184/249 [00:32<00:11,  5.66it/s]Building dataset:  74%|███████████████████████████████▉           | 185/249 [00:32<00:11,  5.52it/s]Building dataset:  75%|████████████████████████████████           | 186/249 [00:33<00:11,  5.46it/s]Building dataset:  75%|████████████████████████████████▎          | 187/249 [00:33<00:11,  5.55it/s]Building dataset:  76%|████████████████████████████████▍          | 188/249 [00:33<00:10,  5.56it/s]Building dataset:  76%|████████████████████████████████▋          | 189/249 [00:33<00:10,  5.59it/s]Building dataset:  76%|████████████████████████████████▊          | 190/249 [00:33<00:10,  5.53it/s]Building dataset:  77%|████████████████████████████████▉          | 191/249 [00:34<00:10,  5.57it/s]Building dataset:  77%|█████████████████████████████████▏         | 192/249 [00:34<00:10,  5.51it/s]Building dataset:  78%|█████████████████████████████████▎         | 193/249 [00:34<00:10,  5.50it/s]Building dataset:  78%|█████████████████████████████████▌         | 194/249 [00:34<00:10,  5.41it/s]Building dataset:  78%|█████████████████████████████████▋         | 195/249 [00:34<00:09,  5.47it/s]Building dataset:  79%|█████████████████████████████████▊         | 196/249 [00:34<00:09,  5.54it/s]Building dataset:  79%|██████████████████████████████████         | 197/249 [00:35<00:09,  5.51it/s]Building dataset:  80%|██████████████████████████████████▏        | 198/249 [00:35<00:09,  5.54it/s]Building dataset:  80%|██████████████████████████████████▎        | 199/249 [00:35<00:08,  5.62it/s]Building dataset:  80%|██████████████████████████████████▌        | 200/249 [00:35<00:08,  5.61it/s]Building dataset:  81%|██████████████████████████████████▋        | 201/249 [00:35<00:08,  5.61it/s]Building dataset:  81%|██████████████████████████████████▉        | 202/249 [00:36<00:08,  5.59it/s]Building dataset:  82%|███████████████████████████████████        | 203/249 [00:36<00:08,  5.55it/s]Building dataset:  82%|███████████████████████████████████▏       | 204/249 [00:36<00:08,  5.49it/s]Building dataset:  82%|███████████████████████████████████▍       | 205/249 [00:36<00:08,  5.47it/s]Building dataset:  83%|███████████████████████████████████▌       | 206/249 [00:36<00:07,  5.58it/s]Building dataset:  83%|███████████████████████████████████▋       | 207/249 [00:36<00:07,  5.65it/s]Building dataset:  84%|███████████████████████████████████▉       | 208/249 [00:37<00:07,  5.54it/s]Building dataset:  84%|████████████████████████████████████       | 209/249 [00:37<00:07,  5.57it/s]Building dataset:  84%|████████████████████████████████████▎      | 210/249 [00:37<00:06,  5.58it/s]Building dataset:  85%|████████████████████████████████████▍      | 211/249 [00:37<00:06,  5.62it/s]Building dataset:  85%|████████████████████████████████████▌      | 212/249 [00:37<00:06,  5.61it/s]Building dataset:  86%|████████████████████████████████████▊      | 213/249 [00:38<00:06,  5.63it/s]Building dataset:  86%|████████████████████████████████████▉      | 214/249 [00:38<00:06,  5.61it/s]Building dataset:  86%|█████████████████████████████████████▏     | 215/249 [00:38<00:06,  5.59it/s]Building dataset:  87%|█████████████████████████████████████▎     | 216/249 [00:38<00:05,  5.57it/s]Building dataset:  87%|█████████████████████████████████████▍     | 217/249 [00:38<00:05,  5.59it/s]Building dataset:  88%|█████████████████████████████████████▋     | 218/249 [00:38<00:05,  5.58it/s]Building dataset:  88%|█████████████████████████████████████▊     | 219/249 [00:39<00:05,  5.62it/s]Building dataset:  88%|█████████████████████████████████████▉     | 220/249 [00:39<00:05,  5.63it/s]Building dataset:  89%|██████████████████████████████████████▏    | 221/249 [00:39<00:05,  5.47it/s]Building dataset:  89%|██████████████████████████████████████▎    | 222/249 [00:39<00:05,  5.32it/s]Building dataset:  90%|██████████████████████████████████████▌    | 223/249 [00:39<00:04,  5.28it/s]Building dataset:  90%|██████████████████████████████████████▋    | 224/249 [00:40<00:04,  5.27it/s]Building dataset:  90%|██████████████████████████████████████▊    | 225/249 [00:40<00:04,  5.25it/s]Building dataset:  91%|███████████████████████████████████████    | 226/249 [00:40<00:04,  5.34it/s]Building dataset:  91%|███████████████████████████████████████▏   | 227/249 [00:40<00:04,  5.34it/s]Building dataset:  92%|███████████████████████████████████████▎   | 228/249 [00:40<00:03,  5.34it/s]Building dataset:  92%|███████████████████████████████████████▌   | 229/249 [00:40<00:03,  5.35it/s]Building dataset:  92%|███████████████████████████████████████▋   | 230/249 [00:41<00:03,  5.33it/s]Building dataset:  93%|███████████████████████████████████████▉   | 231/249 [00:41<00:03,  5.40it/s]Building dataset:  93%|████████████████████████████████████████   | 232/249 [00:41<00:03,  5.50it/s]Building dataset:  94%|████████████████████████████████████████▏  | 233/249 [00:41<00:02,  5.46it/s]Building dataset:  94%|████████████████████████████████████████▍  | 234/249 [00:41<00:02,  5.43it/s]Building dataset:  94%|████████████████████████████████████████▌  | 235/249 [00:42<00:02,  5.49it/s]Building dataset:  95%|████████████████████████████████████████▊  | 236/249 [00:42<00:02,  5.55it/s]Building dataset:  95%|████████████████████████████████████████▉  | 237/249 [00:42<00:02,  5.58it/s]Building dataset:  96%|█████████████████████████████████████████  | 238/249 [00:42<00:01,  5.55it/s]Building dataset:  96%|█████████████████████████████████████████▎ | 239/249 [00:42<00:01,  5.52it/s]Building dataset:  96%|█████████████████████████████████████████▍ | 240/249 [00:42<00:01,  5.59it/s]Building dataset:  97%|█████████████████████████████████████████▌ | 241/249 [00:43<00:01,  5.54it/s]Building dataset:  97%|█████████████████████████████████████████▊ | 242/249 [00:43<00:01,  5.56it/s]Building dataset:  98%|█████████████████████████████████████████▉ | 243/249 [00:43<00:01,  5.58it/s]Building dataset:  98%|██████████████████████████████████████████▏| 244/249 [00:43<00:00,  5.63it/s]Building dataset:  98%|██████████████████████████████████████████▎| 245/249 [00:43<00:00,  5.68it/s]Building dataset:  99%|██████████████████████████████████████████▍| 246/249 [00:44<00:00,  5.68it/s]Building dataset:  99%|██████████████████████████████████████████▋| 247/249 [00:44<00:00,  5.72it/s]Building dataset: 100%|██████████████████████████████████████████▊| 248/249 [00:44<00:00,  5.57it/s]Building dataset: 100%|███████████████████████████████████████████| 249/249 [00:44<00:00,  5.55it/s]Building dataset: 100%|███████████████████████████████████████████| 249/249 [00:44<00:00,  5.59it/s]
+
+RAM dataset built successfully
+  X shape: (2241, 28, 256, 256)
+  Y shape: (2241, 1, 256, 256)
+  Memory usage:
+    X: 16.45 GB
+    Y: 0.59 GB
+    Total: 17.04 GB
+Building dataset:   0%|                                                      | 0/28 [00:00<?, ?it/s]Building dataset:   4%|█▋                                            | 1/28 [00:00<00:04,  6.61it/s]Building dataset:   7%|███▎                                          | 2/28 [00:00<00:04,  6.45it/s]Building dataset:  11%|████▉                                         | 3/28 [00:00<00:03,  6.36it/s]Building dataset:  14%|██████▌                                       | 4/28 [00:00<00:03,  6.23it/s]Building dataset:  18%|████████▏                                     | 5/28 [00:00<00:03,  6.09it/s]Building dataset:  21%|█████████▊                                    | 6/28 [00:00<00:03,  6.02it/s]Building dataset:  25%|███████████▌                                  | 7/28 [00:01<00:03,  6.10it/s]Building dataset:  29%|█████████████▏                                | 8/28 [00:01<00:03,  6.02it/s]Building dataset:  32%|██████████████▊                               | 9/28 [00:01<00:03,  5.95it/s]Building dataset:  36%|████████████████                             | 10/28 [00:01<00:03,  5.92it/s]Building dataset:  39%|█████████████████▋                           | 11/28 [00:01<00:02,  5.91it/s]Building dataset:  43%|███████████████████▎                         | 12/28 [00:01<00:02,  5.91it/s]Building dataset:  46%|████████████████████▉                        | 13/28 [00:02<00:02,  5.90it/s]Building dataset:  50%|██████████████████████▌                      | 14/28 [00:02<00:02,  5.90it/s]Building dataset:  54%|████████████████████████                     | 15/28 [00:02<00:02,  5.97it/s]Building dataset:  57%|█████████████████████████▋                   | 16/28 [00:02<00:02,  5.98it/s]Building dataset:  61%|███████████████████████████▎                 | 17/28 [00:02<00:01,  5.89it/s]Building dataset:  64%|████████████████████████████▉                | 18/28 [00:02<00:01,  5.93it/s]Building dataset:  68%|██████████████████████████████▌              | 19/28 [00:03<00:01,  5.92it/s]Building dataset:  71%|████████████████████████████████▏            | 20/28 [00:03<00:01,  5.86it/s]Building dataset:  75%|█████████████████████████████████▊           | 21/28 [00:03<00:01,  5.88it/s]Building dataset:  79%|███████████████████████████████████▎         | 22/28 [00:03<00:01,  5.84it/s]Building dataset:  82%|████████████████████████████████████▉        | 23/28 [00:03<00:00,  5.95it/s]Building dataset:  86%|██████████████████████████████████████▌      | 24/28 [00:04<00:00,  5.94it/s]Building dataset:  89%|████████████████████████████████████████▏    | 25/28 [00:04<00:00,  5.88it/s]Building dataset:  93%|█████████████████████████████████████████▊   | 26/28 [00:04<00:00,  5.87it/s]Building dataset:  96%|███████████████████████████████████████████▍ | 27/28 [00:04<00:00,  5.87it/s]Building dataset: 100%|█████████████████████████████████████████████| 28/28 [00:04<00:00,  6.00it/s]Building dataset: 100%|█████████████████████████████████████████████| 28/28 [00:04<00:00,  5.97it/s]
+
+RAM dataset built successfully
+  X shape: (252, 28, 256, 256)
+  Y shape: (252, 1, 256, 256)
+  Memory usage:
+    X: 1.85 GB
+    Y: 0.07 GB
+    Total: 1.92 GB
+Train patches in RAM: 2241
+Val patches in RAM:   252
+[SAMPLER] Shrubland patches: 296/2241
+[SAMPLER] Original Shrubland-patch fraction: 0.1321
+[SAMPLER] Shrubland boost weight: 10.0
+[SAMPLER] Expected sampled Shrubland-patch fraction: 0.6035
+[SAMPLER] Samples per epoch: 2241
+[SAMPLER] Replacement: True
+
+Model instantiated via build_swin_unetr: SwinUNETR
+[LOSS] Using class-weighted CrossEntropyLoss
+[CHECKPOINT] Saving best model to: /home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/checkpoints_cc50_weighted_sampler_10x/philippines
+
+Epoch 1/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.2914)
+LR updated to [9.997557473810373e-05]
+Epoch time: 3 min 9 sec
+Train | Loss: 1.4253 | Acc: 66.91% | F1: 0.243
+Val   | Loss: 1.2519 | Acc: 67.25% | F1: 0.279
+
+Epoch 2/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3094)
+LR updated to [9.990232305719946e-05]
+Epoch time: 3 min 8 sec
+Train | Loss: 1.1522 | Acc: 74.33% | F1: 0.285
+Val   | Loss: 1.0640 | Acc: 74.08% | F1: 0.292
+
+Epoch 3/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3217)
+LR updated to [9.978031724785248e-05]
+Epoch time: 3 min 9 sec
+Train | Loss: 1.0566 | Acc: 76.39% | F1: 0.294
+Val   | Loss: 1.0482 | Acc: 73.78% | F1: 0.283
+
+Epoch 4/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3319)
+LR updated to [9.960967771506668e-05]
+Epoch time: 3 min 9 sec
+Train | Loss: 0.9980 | Acc: 77.57% | F1: 0.302
+Val   | Loss: 1.0007 | Acc: 75.56% | F1: 0.286
+
+Epoch 5/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3342)
+LR updated to [9.939057285945934e-05]
+Epoch time: 3 min 7 sec
+Train | Loss: 0.9445 | Acc: 78.52% | F1: 0.304
+Val   | Loss: 0.9268 | Acc: 78.10% | F1: 0.296
+
+Epoch 6/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3389)
+LR updated to [9.912321891107012e-05]
+Epoch time: 3 min 6 sec
+Train | Loss: 0.9309 | Acc: 78.43% | F1: 0.306
+Val   | Loss: 0.9257 | Acc: 77.85% | F1: 0.297
+
+Epoch 7/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3434)
+LR updated to [9.880787971596802e-05]
+Epoch time: 3 min 6 sec
+Train | Loss: 0.9148 | Acc: 78.45% | F1: 0.312
+Val   | Loss: 0.9175 | Acc: 78.11% | F1: 0.297
+
+Epoch 8/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3452)
+LR updated to [9.844486647586726e-05]
+Epoch time: 3 min 6 sec
+Train | Loss: 0.8960 | Acc: 78.66% | F1: 0.317
+Val   | Loss: 0.8874 | Acc: 78.22% | F1: 0.298
+
+Epoch 9/100
+LR updated to [9.80345374410087e-05]
+Epoch time: 3 min 5 sec
+Train | Loss: 0.8740 | Acc: 79.03% | F1: 0.319
+Val   | Loss: 0.9107 | Acc: 76.64% | F1: 0.292
+
+Epoch 10/100
+LR updated to [9.757729755661012e-05]
+Epoch time: 3 min 5 sec
+Train | Loss: 0.8597 | Acc: 79.15% | F1: 0.316
+Val   | Loss: 0.8964 | Acc: 76.34% | F1: 0.284
+
+Epoch 11/100
+LR updated to [9.707359806323419e-05]
+Epoch time: 3 min 3 sec
+Train | Loss: 0.8375 | Acc: 79.27% | F1: 0.323
+Val   | Loss: 0.9287 | Acc: 75.86% | F1: 0.268
+
+Epoch 12/100
+LR updated to [9.652393605146847e-05]
+Epoch time: 3 min 3 sec
+Train | Loss: 0.8111 | Acc: 79.26% | F1: 0.330
+Val   | Loss: 0.8682 | Acc: 76.61% | F1: 0.284
+
+Epoch 13/100
+LR updated to [9.592885397135708e-05]
+Epoch time: 3 min 3 sec
+Train | Loss: 0.7792 | Acc: 79.98% | F1: 0.342
+Val   | Loss: 0.8623 | Acc: 77.21% | F1: 0.289
+
+Epoch 14/100
+LR updated to [9.5288939097068e-05]
+Epoch time: 3 min 3 sec
+Train | Loss: 0.7594 | Acc: 79.83% | F1: 0.348
+Val   | Loss: 0.9111 | Acc: 75.86% | F1: 0.283
+
+Epoch 15/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3497)
+LR updated to [9.460482294732424e-05]
+Epoch time: 3 min 5 sec
+Train | Loss: 0.7322 | Acc: 80.51% | F1: 0.353
+Val   | Loss: 0.8674 | Acc: 78.24% | F1: 0.300
+
+Epoch 16/100
+LR updated to [9.387718066217127e-05]
+Epoch time: 3 min 6 sec
+Train | Loss: 0.7221 | Acc: 80.50% | F1: 0.360
+Val   | Loss: 0.8572 | Acc: 77.97% | F1: 0.297
+
+Epoch 17/100
+LR updated to [9.310673033669524e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.7111 | Acc: 80.80% | F1: 0.360
+Val   | Loss: 0.8669 | Acc: 78.09% | F1: 0.305
+
+Epoch 18/100
+LR updated to [9.229423231234978e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.6991 | Acc: 81.10% | F1: 0.369
+Val   | Loss: 0.8387 | Acc: 78.15% | F1: 0.299
+
+Epoch 19/100
+LR updated to [9.144048842659084e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.6867 | Acc: 81.12% | F1: 0.374
+Val   | Loss: 0.8412 | Acc: 78.10% | F1: 0.303
+
+Epoch 20/100
+Checkpoint saved (best_model.pt) (best val_miou = 0.3525)
+LR updated to [9.054634122155993e-05]
+Epoch time: 3 min 1 sec
+Train | Loss: 0.6802 | Acc: 81.18% | F1: 0.378
+Val   | Loss: 0.8476 | Acc: 77.91% | F1: 0.299
+
+Epoch 21/100
+LR updated to [8.961267311259669e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.6646 | Acc: 81.65% | F1: 0.381
+Val   | Loss: 0.8517 | Acc: 77.43% | F1: 0.294
+
+Epoch 22/100
+LR updated to [8.864040551740159e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.6497 | Acc: 82.08% | F1: 0.391
+Val   | Loss: 0.8756 | Acc: 77.30% | F1: 0.299
+
+Epoch 23/100
+LR updated to [8.763049794670778e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.6423 | Acc: 82.39% | F1: 0.392
+Val   | Loss: 0.8469 | Acc: 78.85% | F1: 0.301
+
+Epoch 24/100
+LR updated to [8.65839470573599e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.6068 | Acc: 83.21% | F1: 0.410
+Val   | Loss: 0.8653 | Acc: 78.69% | F1: 0.298
+
+Epoch 25/100
+LR updated to [8.550178566873413e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5922 | Acc: 83.59% | F1: 0.416
+Val   | Loss: 0.9080 | Acc: 76.64% | F1: 0.294
+
+Epoch 26/100
+LR updated to [8.438508174347012e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5975 | Acc: 83.50% | F1: 0.415
+Val   | Loss: 0.8762 | Acc: 77.54% | F1: 0.283
+
+Epoch 27/100
+LR updated to [8.32349373335208e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5825 | Acc: 84.10% | F1: 0.417
+Val   | Loss: 0.9471 | Acc: 75.59% | F1: 0.286
+
+Epoch 28/100
+LR updated to [8.205248749256017e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5775 | Acc: 84.05% | F1: 0.420
+Val   | Loss: 0.8623 | Acc: 77.05% | F1: 0.298
+
+Epoch 29/100
+LR updated to [8.083889915582238e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5669 | Acc: 84.19% | F1: 0.432
+Val   | Loss: 0.8683 | Acc: 78.03% | F1: 0.288
+
+Epoch 30/100
+LR updated to [7.959536998847746e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5622 | Acc: 84.34% | F1: 0.433
+Val   | Loss: 0.9551 | Acc: 76.63% | F1: 0.301
+
+Epoch 31/100
+LR updated to [7.83231272036805e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5383 | Acc: 85.30% | F1: 0.442
+Val   | Loss: 0.8667 | Acc: 78.40% | F1: 0.301
+
+Epoch 32/100
+LR updated to [7.702342635146036e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5282 | Acc: 85.42% | F1: 0.450
+Val   | Loss: 0.9105 | Acc: 76.94% | F1: 0.279
+
+Epoch 33/100
+LR updated to [7.56975500796434e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5365 | Acc: 85.08% | F1: 0.448
+Val   | Loss: 0.8827 | Acc: 77.95% | F1: 0.314
+
+Epoch 34/100
+LR updated to [7.434680686803493e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5221 | Acc: 85.47% | F1: 0.453
+Val   | Loss: 0.8718 | Acc: 78.68% | F1: 0.297
+
+Epoch 35/100
+LR updated to [7.297252973710759e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5236 | Acc: 85.68% | F1: 0.454
+Val   | Loss: 0.8915 | Acc: 77.89% | F1: 0.286
+
+Epoch 36/100
+LR updated to [7.157607493247112e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.5084 | Acc: 85.85% | F1: 0.457
+Val   | Loss: 0.8823 | Acc: 78.03% | F1: 0.288
+
+Epoch 37/100
+LR updated to [7.015882058642166e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.4951 | Acc: 86.29% | F1: 0.458
+Val   | Loss: 0.8769 | Acc: 77.52% | F1: 0.293
+
+Epoch 38/100
+LR updated to [6.87221653578916e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.4952 | Acc: 86.31% | F1: 0.466
+Val   | Loss: 0.9062 | Acc: 78.52% | F1: 0.302
+
+Epoch 39/100
+LR updated to [6.726752705214197e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.4879 | Acc: 86.38% | F1: 0.467
+Val   | Loss: 0.9198 | Acc: 76.63% | F1: 0.287
+
+Epoch 40/100
+LR updated to [6.579634122155994e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.4844 | Acc: 86.44% | F1: 0.471
+Val   | Loss: 0.8841 | Acc: 77.56% | F1: 0.278
+
+Epoch 41/100
+LR updated to [6.431005974894189e-05]
+Epoch time: 3 min 1 sec
+Train | Loss: 0.4813 | Acc: 86.61% | F1: 0.467
+Val   | Loss: 0.9284 | Acc: 77.61% | F1: 0.295
+
+Epoch 42/100
+LR updated to [6.281014941466034e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.4727 | Acc: 86.83% | F1: 0.474
+Val   | Loss: 0.8739 | Acc: 79.03% | F1: 0.290
+
+Epoch 43/100
+LR updated to [6.12980904491289e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.4669 | Acc: 87.04% | F1: 0.473
+Val   | Loss: 0.9001 | Acc: 77.57% | F1: 0.281
+
+Epoch 44/100
+LR updated to [5.977537507199341e-05]
+Epoch time: 3 min 0 sec
+Train | Loss: 0.4659 | Acc: 86.96% | F1: 0.471
+Val   | Loss: 0.9024 | Acc: 77.21% | F1: 0.274
+
+Epoch 45/100
+Early stopping triggered at epoch 45 (best miou = 0.3525)
+[DONE] Training completed for region: philippines
+============================================================
+[PROCESS EXIT] code=0 at gio  6 ago 2026, 14.16.35, CEST
+============================================================

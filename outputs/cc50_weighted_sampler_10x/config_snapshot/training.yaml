@@ -1,0 +1,39 @@
+seed: 42
+
+device:
+  prefer_cuda: true
+  prefer_mps: true
+
+training:
+  #epochs: 100
+  epochs: 100
+  
+  monitor: "val_miou" # "val_accuracy", "val_miou", "val_f1"
+  mode: "max"
+
+loss:
+  ignore_class_ids: [0] # ignore only NoData pixels (I exclude the 9 because it was my mangrove class here )
+  use_class_weights: true
+
+
+optimizer:
+  learning_rate: 0.0001
+  weight_decay: 0.01
+
+scheduler:
+  enabled: true
+  name: "CosineAnnealingLR"
+  t_max: 100
+  eta_min: 0.000001
+
+early_stopping:
+  enabled: true
+  patience: 25 # Luigi told me that i can increase the numbers of the Patience to 25 or 30.
+  min_delta: 0.001
+  warmup_epochs: 5
+
+checkpoint:
+  enabled: true
+  base_dir: "/home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/checkpoints"
+  save_best: true
+  best_filename: "best_model.pt"

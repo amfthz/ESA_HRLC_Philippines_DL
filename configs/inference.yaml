@@ -1,0 +1,67 @@
+# TILE INFERENCE + WATER MERGING PIPELINE CONFIGURATION
+# ESA CCI UNIPV
+# =====================================================
+
+# =====================================================
+# RUNTIME / EXECUTION
+# =====================================================
+runtime:
+  device: auto        # auto | cpu | cuda | mps
+  num_workers: 4
+  seed: 42
+
+# =====================================================
+# DATA / INPUT
+# =====================================================
+# Consumed by main.py (DL inference)
+data:
+  # -----------------------------
+  # POLARIZATION MODE (LOGICAL)
+  # -----------------------------
+  # Options:
+  #   - "VH"      -> use VH only        (n_channels = 28)
+  #   - "VV"      -> use VV only        (n_channels = 28)
+  #   - "VH_VV"   -> use both VH and VV (n_channels = 56)
+  polarization_mode: VH
+
+  # Explicit band mapping per feature GeoTIFF (0-based)
+  pol_map:
+    VH: 0
+    VV: 1
+
+  # Polarizations used per mode
+  band_mapping:
+    VH:    ["VH"]
+    VV:    ["VV"]
+    VH_VV: ["VH", "VV"]
+
+  # Temporal stack
+  n_features: 28
+
+# =====================================================
+# PATCHING / INFERENCE STRATEGY
+# =====================================================
+patching:
+  patch_size: 512        # must be divisible by 32
+  stride: 256            # < patch_size enables overlap
+  batch_size: 8
+
+# =====================================================
+# PREPROCESSING
+# =====================================================
+preprocessing:
+  normalization:
+    enabled: true
+    nan_to_zero: true
+
+# =====================================================
+# MODEL
+# =====================================================
+model:
+  num_classes: 11
+  feature_size: 48
+
+  expected_channels:
+    VH: 28
+    VV: 28
+    VH_VV: 56

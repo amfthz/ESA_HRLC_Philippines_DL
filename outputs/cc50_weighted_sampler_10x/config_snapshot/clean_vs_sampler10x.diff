@@ -1,0 +1,95 @@
+--- src/train.py	2026-08-03 16:04:43.128497599 +0200
++++ src/train_cc50_sampler10x.py	2026-08-06 11:44:59.501491260 +0200
+@@ -33,7 +33,7 @@
+ import os
+ 
+ from sklearn.model_selection import train_test_split
+-from torch.utils.data import DataLoader, TensorDataset
++from torch.utils.data import DataLoader, TensorDataset, WeightedRandomSampler
+ 
+ from src.utils.config import load_config
+ from src.data.dataset import S1Dataset
+@@ -188,10 +188,82 @@
+         batch_size = dataset_cfg["dataloader"]["batch_size"]
+         num_workers = dataset_cfg["dataloader"]["num_workers"]
+ 
++        # --------------------------------------------------
++        # WEIGHTED RANDOM SAMPLER — CC50 SHRUBLAND EXPERIMENT
++        # --------------------------------------------------
++        # A patch receives the boosted weight when it contains
++        # at least one Shrubland pixel (class ID 5).
++        shrubland_class_id = 5
++        shrubland_boost = 10.0
++
++        # y_train shape: (N, 1, H, W)
++        y_train_long = y_train.long()
++
++        has_shrubland = (
++            (y_train_long == shrubland_class_id)
++            .view(y_train_long.shape[0], -1)
++            .any(dim=1)
++        )
++
++        sample_weights = torch.ones(
++            y_train_long.shape[0],
++            dtype=torch.float32,
++        )
++
++        sample_weights[has_shrubland] = shrubland_boost
++
++        num_shrub_patches = int(has_shrubland.sum().item())
++        num_total_patches = int(y_train_long.shape[0])
++
++        original_shrub_fraction = (
++            num_shrub_patches / num_total_patches
++            if num_total_patches > 0
++            else 0.0
++        )
++
++        expected_sampled_shrub_fraction = float(
++            sample_weights[has_shrubland].sum()
++            / sample_weights.sum()
++        )
++
++        print(
++            f"[SAMPLER] Shrubland patches: "
++            f"{num_shrub_patches}/{num_total_patches}"
++        )
++        print(
++            f"[SAMPLER] Original Shrubland-patch fraction: "
++            f"{original_shrub_fraction:.4f}"
++        )
++        print(
++            f"[SAMPLER] Shrubland boost weight: "
++            f"{shrubland_boost}"
++        )
++        print(
++            f"[SAMPLER] Expected sampled Shrubland-patch "
++            f"fraction: {expected_sampled_shrub_fraction:.4f}"
++        )
++        print(
++            f"[SAMPLER] Samples per epoch: "
++            f"{len(sample_weights)}"
++        )
++        print("[SAMPLER] Replacement: True")
++
++        if num_shrub_patches == 0:
++            raise RuntimeError(
++                "No Shrubland-containing training patches were found"
++            )
++
++        train_sampler = WeightedRandomSampler(
++            weights=sample_weights,
++            num_samples=len(sample_weights),
++            replacement=True,
++        )
++
+         trainloader = DataLoader(
+             TensorDataset(X_train, y_train),
+             batch_size=batch_size,
+-            shuffle=True,
++            sampler=train_sampler,
++            shuffle=False,
+             num_workers=num_workers,
+             pin_memory=True,
+         )

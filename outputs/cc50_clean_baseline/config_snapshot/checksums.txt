@@ -1,0 +1,3 @@
+f6988d7bc2604306c37e089aeed3a7682fe2e316be93f173c7246d8ceb6e0e4c  configs/splits/philippines/tile_split.json
+c180719f4d5a2427c61d7eeb642b6c4ebac4faa6ee8d0ac3e94d377975cfb026  configs/splits/philippines/tile_stats.json
+7dea0e7c8b69be0c5c39d554e297134722a269319c048ab511e946d820a0a313  configs/splits/philippines/class_weights.json

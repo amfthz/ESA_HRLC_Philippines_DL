@@ -1,0 +1,46 @@
+dataset:
+  base_path: /home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/training_cc50
+  regions:
+  - philippines
+derived:
+  splits_base_dir: configs/splits
+  tile_stats_file: tile_stats.json
+  tile_split_file: tile_split.json
+tile_split:
+  enabled: true
+  clustering:
+    method: kmeans
+    n_clusters: 4
+    random_state: 42
+  split:
+    val_fraction: 0.1
+    random_state: 42
+temporal:
+  t_len: 28
+spatial:
+  out_size:
+  - 512
+  - 512
+  polarizations:
+  - VH
+  pol_map:
+    VH: 0
+    VV: 1
+  return_y_long: false
+patching:
+  enabled: true
+  patch_size:
+  - 256
+  - 256
+  stride: 128
+augmentation:
+  enabled: true
+  horizontal_flip: true
+  vertical_flip: true
+dataloader:
+  batch_size: 1
+  num_workers: 0
+  pin_memory: false
+sanity_check:
+  num_samples: 10
+  seed: 42

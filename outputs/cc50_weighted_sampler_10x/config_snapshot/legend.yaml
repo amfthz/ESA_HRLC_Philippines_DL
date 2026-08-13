@@ -1,0 +1,40 @@
+classes:
+  - name: NoData
+    raw_id: 0
+    class_id: 0
+
+  - name: Built-up
+    raw_id: 1
+    class_id: 1
+
+  - name: Cropland
+    raw_id: 2
+    class_id: 2
+
+  - name: Forest
+    raw_id: 3
+    class_id: 3
+
+  - name: Grassland
+    raw_id: 4
+    class_id: 4
+
+  - name: Shrubland
+    raw_id: 5
+    class_id: 5
+
+  - name: Wetland
+    raw_id: 6
+    class_id: 6
+
+  - name: Water
+    raw_id: 7
+    class_id: 7
+
+  - name: Bareland
+    raw_id: 8
+    class_id: 8
+
+  - name: Mangrove Forest
+    raw_id: 9
+    class_id: 9

@@ -1,0 +1,52 @@
+=== CC50 SAMPLER-10X BEST-CHECKPOINT EVALUATION ===
+Project: /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline
+Device: cuda
+Checkpoint: /home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/checkpoints_cc50_weighted_sampler_10x/philippines/best_model.pt
+Output: /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation
+GPU: NVIDIA GeForce GTX 1080 Ti
+[INDEXING] JSON files: 277 | valid samples: 277 | skipped: 0
+Validation scenes: 28
+Loaded checkpoint epoch: 20
+Checkpoint monitor: miou
+Checkpoint best metric: 0.3524741870332935
+Patch size: (256, 256)
+Stride: 128
+Patch inference batch size: 1
+Evaluating validation scenes:   0%|                                          | 0/28 [00:00<?, ?it/s]Evaluating validation scenes:   4%|█▏                                | 1/28 [00:01<00:27,  1.02s/it]Evaluating validation scenes:   7%|██▍                               | 2/28 [00:01<00:16,  1.57it/s]Evaluating validation scenes:  11%|███▋                              | 3/28 [00:01<00:12,  2.00it/s]Evaluating validation scenes:  14%|████▊                             | 4/28 [00:02<00:10,  2.30it/s]Evaluating validation scenes:  18%|██████                            | 5/28 [00:02<00:09,  2.52it/s]Evaluating validation scenes:  21%|███████▎                          | 6/28 [00:02<00:08,  2.67it/s]Evaluating validation scenes:  25%|████████▌                         | 7/28 [00:03<00:07,  2.76it/s]Evaluating validation scenes:  29%|█████████▋                        | 8/28 [00:03<00:07,  2.80it/s]Evaluating validation scenes:  32%|██████████▉                       | 9/28 [00:03<00:06,  2.88it/s]Evaluating validation scenes:  36%|███████████▊                     | 10/28 [00:04<00:06,  2.90it/s]Evaluating validation scenes:  39%|████████████▉                    | 11/28 [00:04<00:05,  2.91it/s]Evaluating validation scenes:  43%|██████████████▏                  | 12/28 [00:04<00:05,  2.94it/s]Evaluating validation scenes:  46%|███████████████▎                 | 13/28 [00:05<00:05,  2.97it/s]Evaluating validation scenes:  50%|████████████████▌                | 14/28 [00:05<00:04,  2.92it/s]Evaluating validation scenes:  54%|█████████████████▋               | 15/28 [00:05<00:04,  2.90it/s]Evaluating validation scenes:  57%|██████████████████▊              | 16/28 [00:06<00:04,  2.89it/s]Evaluating validation scenes:  61%|████████████████████             | 17/28 [00:06<00:03,  2.93it/s]Evaluating validation scenes:  64%|█████████████████████▏           | 18/28 [00:06<00:03,  2.94it/s]Evaluating validation scenes:  68%|██████████████████████▍          | 19/28 [00:07<00:03,  2.97it/s]Evaluating validation scenes:  71%|███████████████████████▌         | 20/28 [00:07<00:02,  2.98it/s]Evaluating validation scenes:  75%|████████████████████████▊        | 21/28 [00:07<00:02,  2.99it/s]Evaluating validation scenes:  79%|█████████████████████████▉       | 22/28 [00:08<00:02,  2.99it/s]Evaluating validation scenes:  82%|███████████████████████████      | 23/28 [00:08<00:01,  2.98it/s]Evaluating validation scenes:  86%|████████████████████████████▎    | 24/28 [00:08<00:01,  2.98it/s]Evaluating validation scenes:  89%|█████████████████████████████▍   | 25/28 [00:09<00:01,  2.97it/s]Evaluating validation scenes:  93%|██████████████████████████████▋  | 26/28 [00:09<00:00,  3.01it/s]Evaluating validation scenes:  96%|███████████████████████████████▊ | 27/28 [00:09<00:00,  3.02it/s]Evaluating validation scenes: 100%|█████████████████████████████████| 28/28 [00:10<00:00,  3.02it/s]Evaluating validation scenes: 100%|█████████████████████████████████| 28/28 [00:10<00:00,  2.77it/s]
+
+=== GLOBAL UNIQUE-PIXEL RESULTS ===
+Overall accuracy: 0.803817
+Macro precision: 0.505413
+Macro recall: 0.551970
+Macro F1: 0.512222
+Mean IoU: 0.403811
+Cohen kappa: 0.732253
+
+=== SHRUBLAND ===
+GT support: 3716
+Predicted pixels: 26056
+True positives: 39
+False positives: 26017
+False negatives: 3677
+Precision: 0.001497
+Recall: 0.010495
+F1: 0.002620
+IoU: 0.001312
+Validation tiles containing Shrubland: 5
+
+[CHECK] Shrubland GT support agrees with the pretraining audit: 3716 pixels.
+
+Evaluation outputs:
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/confusion_matrix_counts.csv
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/confusion_matrix_counts.npy
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/confusion_matrix_counts.png
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/confusion_matrix_row_normalized.csv
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/confusion_matrix_row_normalized.npy
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/confusion_matrix_row_normalized.png
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/evaluation.log
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/evaluation_summary.json
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/per_class_metrics.csv
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/per_tile_metrics.csv
+  /home/tlcrs/Philippines_Project/09_Luigi Russo/03-Swin_Unet_Pipeline/outputs/cc50_weighted_sampler_10x/evaluation/shrubland_validation_tiles.csv
+
+CC50 SAMPLER-10X BEST-CHECKPOINT EVALUATION COMPLETED

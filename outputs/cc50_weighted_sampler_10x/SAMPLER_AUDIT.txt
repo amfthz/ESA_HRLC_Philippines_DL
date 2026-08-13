@@ -1,0 +1,35 @@
+CC50 WEIGHTED RANDOM SAMPLER AUDIT
+==================================
+
+Dataset
+-------
+Training scenes: 249
+Total training patches: 2241
+Shrubland-containing patches: 296
+Non-Shrubland patches: 1945
+
+Sampler
+-------
+Shrubland class ID: 5
+Normal patch weight: 1.0
+Shrubland-containing patch weight: 10.0
+Replacement: True
+Samples per epoch: 2241
+
+Exposure
+--------
+Original Shrubland-patch fraction: 0.132084
+Expected sampled Shrubland fraction: 0.603466
+
+Seed-42 simulation
+------------------
+Simulated Shrubland draws: 1355
+Simulated Shrubland draw fraction: 0.604641
+Unique original patches represented: 1010
+Repeated draws: 1231
+
+Important
+---------
+A patch receives the 10x weight when it contains at least one
+Shrubland pixel. Class-weighted CrossEntropyLoss remains enabled.
+The train/validation split is unchanged and force=False.

@@ -1,0 +1,36 @@
+seed: 42
+
+device:
+  prefer_cuda: true
+  prefer_mps: true
+
+training:
+  epochs: 100
+  monitor: "val_miou" # "val_accuracy", "val_miou", "val_f1"
+  mode: "max"
+
+loss:
+  ignore_class_ids: [0, 9] #ignore nodata and water pixels
+  use_class_weights: true
+
+optimizer:
+  learning_rate: 0.0001
+  weight_decay: 0.01
+
+scheduler:
+  enabled: true
+  name: "CosineAnnealingLR"
+  t_max: 100
+  eta_min: 0.000001
+
+early_stopping:
+  enabled: true
+  patience: 15
+  min_delta: 0.001
+  warmup_epochs: 5
+
+checkpoint:
+  enabled: true
+  base_dir: "/home/silvia/Desktop/GIGI/ESA_CCI_PROJECT/training_checkpoints_cls_whts_jstars_and_50_tiles_merged"
+  save_best: true
+  best_filename: "best_model.pt"

@@ -1,0 +1,44 @@
+classes:
+  - name: No data
+    raw_id: 0
+    class_id: 0
+
+  - name: Forest
+    raw_id: 20
+    class_id: 1
+
+  - name: Shrubland
+    raw_id: 5
+    class_id: 2
+
+  - name: Grassland
+    raw_id: 7
+    class_id: 3
+
+  - name: Cropland
+    raw_id: 8
+    class_id: 4
+
+  - name: Wetland
+    raw_id: 9
+    class_id: 5
+
+  - name: Lichens and mosses
+    raw_id: 11
+    class_id: 6
+
+  - name: Bareland
+    raw_id: 12
+    class_id: 7
+
+  - name: Built-up
+    raw_id: 13
+    class_id: 8
+
+  - name: Water
+    raw_id: 15
+    class_id: 9
+
+  - name: Permanent ice and snow
+    raw_id: 16
+    class_id: 10

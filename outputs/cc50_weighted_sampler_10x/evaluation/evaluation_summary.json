@@ -1,0 +1,167 @@
+{
+  "checkpoint": {
+    "path": "/home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/checkpoints_cc50_weighted_sampler_10x/philippines/best_model.pt",
+    "sha256": "d871a654889019a91373ab4fe808e20c29da6e0c77aa5bb2eebae35960caa666",
+    "saved_epoch": 20,
+    "monitor": "miou",
+    "best_training_metric": 0.3524741870332935
+  },
+  "dataset": {
+    "base_path": "/home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/training_cc50",
+    "region": "philippines",
+    "validation_scenes": 28,
+    "patch_size": [
+      256,
+      256
+    ],
+    "stride": 128,
+    "ignore_class_ids": [
+      0
+    ]
+  },
+  "global_metrics_unique_validation_pixels": {
+    "total_valid_pixels": 6174226,
+    "correct_pixels": 4962946,
+    "overall_accuracy": 0.8038167051222291,
+    "macro_precision": 0.5054129165999612,
+    "macro_recall": 0.5519698641914137,
+    "macro_f1": 0.5122222575322023,
+    "mean_iou": 0.40381072807151464,
+    "cohen_kappa": 0.7322530614048148,
+    "predicted_nodata_on_valid_gt": 0
+  },
+  "per_class_metrics": {
+    "1": {
+      "class_id": 1,
+      "class_name": "Built-up",
+      "support": 173461,
+      "predicted_pixels": 233132,
+      "true_positive": 100020,
+      "false_positive": 133112,
+      "false_negative": 73441,
+      "precision": 0.4290273321551739,
+      "recall": 0.5766137633243208,
+      "f1": 0.49199076226103255,
+      "iou": 0.3262518225675451
+    },
+    "2": {
+      "class_id": 2,
+      "class_name": "Cropland",
+      "support": 1491586,
+      "predicted_pixels": 1276355,
+      "true_positive": 1143452,
+      "false_positive": 132903,
+      "false_negative": 348134,
+      "precision": 0.8958730133857743,
+      "recall": 0.7666014564363034,
+      "f1": 0.8262112523352195,
+      "iou": 0.7038841137120657
+    },
+    "3": {
+      "class_id": 3,
+      "class_name": "Forest",
+      "support": 2546505,
+      "predicted_pixels": 2630439,
+      "true_positive": 2285913,
+      "false_positive": 344526,
+      "false_negative": 260592,
+      "precision": 0.8690233835492859,
+      "recall": 0.8976668021464713,
+      "f1": 0.8831128944025665,
+      "iou": 0.7906912793394467
+    },
+    "4": {
+      "class_id": 4,
+      "class_name": "Grassland",
+      "support": 431429,
+      "predicted_pixels": 397665,
+      "true_positive": 184637,
+      "false_positive": 213028,
+      "false_negative": 246792,
+      "precision": 0.46430286799190273,
+      "recall": 0.42796613115947235,
+      "f1": 0.4453946114674573,
+      "iou": 0.2865001078427265
+    },
+    "5": {
+      "class_id": 5,
+      "class_name": "Shrubland",
+      "support": 3716,
+      "predicted_pixels": 26056,
+      "true_positive": 39,
+      "false_positive": 26017,
+      "false_negative": 3677,
+      "precision": 0.0014967761743936137,
+      "recall": 0.010495156081808395,
+      "f1": 0.002619911326078194,
+      "iou": 0.001311673897689436
+    },
+    "6": {
+      "class_id": 6,
+      "class_name": "Wetland",
+      "support": 197457,
+      "predicted_pixels": 166439,
+      "true_positive": 77125,
+      "false_positive": 89314,
+      "false_negative": 120332,
+      "precision": 0.46338298115225396,
+      "recall": 0.3905913692601427,
+      "f1": 0.4238848462197991,
+      "iou": 0.2689428149987272
+    },
+    "7": {
+      "class_id": 7,
+      "class_name": "Water",
+      "support": 1128402,
+      "predicted_pixels": 1148994,
+      "true_positive": 1071445,
+      "false_positive": 77549,
+      "false_negative": 56957,
+      "precision": 0.932507045293535,
+      "recall": 0.949524194391715,
+      "f1": 0.9409386861134383,
+      "iou": 0.88846478837034
+    },
+    "8": {
+      "class_id": 8,
+      "class_name": "Bareland",
+      "support": 189707,
+      "predicted_pixels": 235119,
+      "true_positive": 94959,
+      "false_positive": 140160,
+      "false_negative": 94748,
+      "precision": 0.4038763349622957,
+      "recall": 0.5005561207546374,
+      "f1": 0.4470489094358631,
+      "iou": 0.28787056601600036
+    },
+    "9": {
+      "class_id": 9,
+      "class_name": "Mangrove Forest",
+      "support": 11963,
+      "predicted_pixels": 60027,
+      "true_positive": 5356,
+      "false_positive": 54671,
+      "false_negative": 6607,
+      "precision": 0.0892265147350359,
+      "recall": 0.44771378416785085,
+      "f1": 0.14879844422836505,
+      "iou": 0.08037938589909055
+    }
+  },
+  "shrubland_summary": {
+    "class_id": 5,
+    "class_name": "Shrubland",
+    "support": 3716,
+    "predicted_pixels": 26056,
+    "true_positive": 39,
+    "false_positive": 26017,
+    "false_negative": 3677,
+    "precision": 0.0014967761743936137,
+    "recall": 0.010495156081808395,
+    "f1": 0.002619911326078194,
+    "iou": 0.001311673897689436,
+    "validation_tiles_with_shrubland": 5
+  },
+  "important_note": "These are global unique-pixel metrics after reconstructing each 512x512 validation scene from overlapping patches. They are not expected to be numerically identical to the training log, which averages metrics over validation patches."
+}

@@ -1,0 +1,38 @@
+seed: 42
+
+device:
+  prefer_cuda: true
+  prefer_mps: true
+
+training:
+  epochs: 100
+  
+  monitor: "val_miou" # "val_accuracy", "val_miou", "val_f1"
+  mode: "max"
+
+loss:
+  ignore_class_ids: [0] # NoData only; class 9 is Mangrove Forest in the Philippines legend
+  use_class_weights: true
+
+
+optimizer:
+  learning_rate: 0.0001
+  weight_decay: 0.01
+
+scheduler:
+  enabled: true
+  name: "CosineAnnealingLR"
+  t_max: 100
+  eta_min: 0.000001
+
+early_stopping:
+  enabled: true
+  patience: 25
+  min_delta: 0.001
+  warmup_epochs: 5
+
+checkpoint:
+  enabled: true
+  base_dir: "/home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/checkpoints"
+  save_best: true
+  best_filename: "best_model.pt"

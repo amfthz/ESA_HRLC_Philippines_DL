@@ -1,0 +1,348 @@
+CC50 SHRUBLAND EXPERIMENT COMPARISON by Amin
+====================================
+
+Purpose
+-------
+Evaluate whether:
+1. the conservative CC50 Shrubland reference revision alone, or
+2. the same CC50 reference combined with a 10x WeightedRandomSampler
+
+can resolve the failure of the Swin-UNETR model to detect Shrubland.
+
+Both experiments used the same:
+- CC50 reference
+- Sentinel-1 inputs
+- train/validation split
+- Swin-UNETR architecture
+- class-weighted CrossEntropyLoss
+- optimizer
+- scheduler
+- early stopping configuration
+- validation data
+- full-scene evaluation procedure
+
+The only intended difference between the two training runs was the
+WeightedRandomSampler in the second experiment.
+
+
+============================================================
+1. DATASET AND SPLIT
+============================================================
+
+Reference:
+Conservative Shrubland rescue with CC50 connected-component filtering.
+
+Train scenes: 249
+Validation scenes: 28
+
+Train patches: 2241
+Validation patches: 252
+
+Training Shrubland-containing patches: 296 / 2241
+Original Shrubland-patch fraction: 13.2084%
+
+Validation Shrubland pixels: 3716
+Validation scenes containing Shrubland: 5
+
+The train/validation split was preserved.
+
+tile_split.json SHA256:
+f6988d7bc2604306c37e089aeed3a7682fe2e316be93f173c7246d8ceb6e0e4c
+
+
+============================================================
+2. CC50 CLEAN BASELINE
+============================================================
+
+Sampler:
+Disabled
+
+Loss:
+Class-weighted CrossEntropyLoss
+
+Shrubland class weight:
+3.59988070
+
+Maximum epochs:
+100
+
+Early stopping:
+Epoch 78
+
+Best checkpoint:
+Epoch 53
+
+Best patch-level validation mIoU:
+0.3696774
+
+
+Full-scene unique-pixel evaluation
+----------------------------------
+
+Total valid pixels: 6174226
+Correct pixels: 5144963
+
+Overall accuracy: 0.833297
+Macro precision: 0.549740
+Macro recall: 0.583169
+Macro F1: 0.546032
+Mean IoU: 0.433949
+Cohen kappa: 0.770260
+
+
+Shrubland
+---------
+
+GT support: 3716
+Predicted Shrubland pixels: 0
+
+True positives: 0
+False positives: 0
+False negatives: 3716
+
+Precision: 0.000000
+Recall: 0.000000
+F1: 0.000000
+IoU: 0.000000
+
+
+True Shrubland prediction destinations
+--------------------------------------
+
+Built-up: 28 (0.753%)
+Cropland: 82 (2.207%)
+Forest: 2714 (73.036%)
+Grassland: 888 (23.897%)
+Shrubland: 0 (0.000%)
+Bareland: 4 (0.108%)
+
+Forest + Grassland:
+3602 / 3716 = 96.933%
+
+
+============================================================
+3. CC50 + WEIGHTED RANDOM SAMPLER 10X
+============================================================
+
+Sampler rule
+------------
+
+Shrubland class ID: 5
+
+Any training patch containing at least one Shrubland pixel:
+weight = 10.0
+
+All other patches:
+weight = 1.0
+
+replacement=True
+
+Samples per epoch:
+2241
+
+Original Shrubland-patch fraction:
+0.132084
+
+Expected sampled Shrubland-patch fraction:
+0.603466
+
+Seed-42 sampler simulation:
+1355 / 2241 Shrubland-containing draws
+= 0.604641
+
+
+Training
+--------
+
+Maximum epochs:
+100
+
+Early stopping:
+Epoch 45
+
+Best checkpoint:
+Epoch 20
+
+Best patch-level validation mIoU:
+0.3524742
+
+
+Full-scene unique-pixel evaluation
+----------------------------------
+
+Total valid pixels: 6174226
+Correct pixels: 4962946
+
+Overall accuracy: 0.803817
+Macro precision: 0.505413
+Macro recall: 0.551970
+Macro F1: 0.512222
+Mean IoU: 0.403811
+Cohen kappa: 0.732253
+
+
+Shrubland
+---------
+
+GT support: 3716
+Predicted Shrubland pixels: 26056
+
+True positives: 39
+False positives: 26017
+False negatives: 3677
+
+Precision: 0.001497
+Recall: 0.010495
+F1: 0.002620
+IoU: 0.001312
+
+
+True Shrubland prediction destinations
+--------------------------------------
+
+Built-up: 4 (0.108%)
+Cropland: 15 (0.404%)
+Forest: 2597 (69.887%)
+Grassland: 1057 (28.445%)
+Shrubland: 39 (1.050%)
+Bareland: 4 (0.108%)
+
+Forest + Grassland:
+3654 / 3716 = 98.332%
+
+
+Sources of predicted Shrubland
+------------------------------
+
+Built-up: 279 (1.071%)
+Cropland: 1844 (7.077%)
+Forest: 20457 (78.512%)
+Grassland: 2698 (10.355%)
+Shrubland: 39 (0.150%)
+Wetland: 83 (0.319%)
+Bareland: 510 (1.957%)
+Mangrove Forest: 146 (0.560%)
+
+Only 39 / 26056 predicted Shrubland pixels were correct.
+
+
+============================================================
+4. CLEAN VS SAMPLER COMPARISON
+============================================================
+
+Metric                     Clean       Sampler      Difference
+----------------------------------------------------------------
+Overall accuracy          0.833297     0.803817     -0.029480
+Macro precision           0.549740     0.505413     -0.044327
+Macro recall              0.583169     0.551970     -0.031199
+Macro F1                  0.546032     0.512222     -0.033810
+Mean IoU                  0.433949     0.403811     -0.030138
+Cohen kappa               0.770260     0.732253     -0.038007
+
+
+Shrubland                 Clean       Sampler
+------------------------------------------------
+Predicted pixels              0         26056
+True positives                0            39
+False positives               0         26017
+False negatives            3716          3677
+Precision                0.0000        0.0015
+Recall                   0.0000        0.0105
+F1                       0.0000        0.0026
+IoU                      0.0000        0.0013
+
+
+============================================================
+5. TILE-LEVEL SHRUBLAND ANALYSIS
+============================================================
+
+51QTU_03_11
+GT Shrubland: 3191
+Predicted Shrubland: 1676
+TP: 39
+FP: 1637
+FN: 3152
+Recall: 0.012222
+
+50PRC_11_05
+GT Shrubland: 298
+Predicted Shrubland: 912
+TP: 0
+
+51NVJ_09_04
+GT Shrubland: 67
+Predicted Shrubland: 1422
+TP: 0
+
+51PVN_06_05
+GT Shrubland: 115
+Predicted Shrubland: 3171
+TP: 0
+
+51QTV_07_11
+GT Shrubland: 45
+Predicted Shrubland: 2227
+TP: 0
+
+All 39 true-positive Shrubland pixels occurred in only one of the
+five validation scenes containing Shrubland.
+
+False Shrubland predictions inside these five scenes:
+9369
+
+Total false Shrubland predictions:
+26017
+
+Therefore:
+16648 false Shrubland predictions occurred in validation scenes
+where no ground-truth Shrubland was present.
+
+
+============================================================
+6. INTERPRETATION
+============================================================
+
+The CC50 reference revision alone did not resolve Shrubland collapse.
+The clean baseline never predicted class 5.
+
+The 10x WeightedRandomSampler forced the model to produce Shrubland
+predictions, but the resulting predictions were overwhelmingly false.
+
+Only 39 of 3716 true Shrubland pixels were detected.
+
+Only 39 of 26056 predicted Shrubland pixels were correct.
+
+Most false Shrubland predictions originated from Forest.
+
+The sampler therefore appears to shift part of the Forest/vegetation
+decision boundary toward Shrubland without learning a reliable
+Shrubland representation.
+
+At the same time, all major global metrics decreased relative to the
+clean baseline.
+
+The 10x binary patch sampler should therefore not be considered an
+effective solution to the Shrubland problem.
+
+
+============================================================
+7. CURRENT CONCLUSION
+============================================================
+
+The experiments indicate that:
+
+1. Improving the reference with the conservative CC50 rescue is not
+   sufficient by itself.
+
+2. Increasing Shrubland-patch exposure from approximately 13% to
+   approximately 60% through a 10x WeightedRandomSampler produces only
+   ~1% Shrubland recall.
+
+3. This small recall increase is accompanied by approximately 26,000
+   false-positive Shrubland pixels and deterioration in global model
+   performance.
+
+4. Shrubland remains primarily confused with Forest and Grassland.
+
+5. Further changes to the rare-class learning strategy should be
+   discussed before another experiment is launched.

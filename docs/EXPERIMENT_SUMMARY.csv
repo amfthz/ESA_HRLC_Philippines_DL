@@ -1,0 +1,3 @@
+experiment,status,dataset,split,best_epoch,early_stop_epoch,overall_accuracy,mean_iou,macro_f1,shrubland_precision,shrubland_recall,shrubland_f1,main_conclusion
+CC50_clean_baseline,CURRENT_BASELINE,training_cc50,fixed_249_train_28_val,53,78,0.8332968375,0.4339485300,0.5460316983,0.0,0.0,0.0,"Best global performance; no Shrubland predictions"
+CC50_weighted_sampler_10x,EXPERIMENTAL,training_cc50,fixed_249_train_28_val,20,45,0.8038167051,0.4038107281,0.5122222575,0.0014967762,0.0104951561,0.0026199113,"Small Shrubland recall (~1.05%) but very high false positives and lower global performance"

@@ -1,0 +1,167 @@
+{
+  "checkpoint": {
+    "path": "/home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/checkpoints_cc50_clean_baseline/philippines/best_model.pt",
+    "sha256": "e13160c52cf6e65c6463788823258db96781af3ce76ce353f6a2641a1253a4ce",
+    "saved_epoch": 53,
+    "monitor": "miou",
+    "best_training_metric": 0.3696774013914169
+  },
+  "dataset": {
+    "base_path": "/home/tlcrs/Philippines_Project/09_Luigi Russo/DATASET_PHILIPPINES/training_cc50",
+    "region": "philippines",
+    "validation_scenes": 28,
+    "patch_size": [
+      256,
+      256
+    ],
+    "stride": 128,
+    "ignore_class_ids": [
+      0
+    ]
+  },
+  "global_metrics_unique_validation_pixels": {
+    "total_valid_pixels": 6174226,
+    "correct_pixels": 5144963,
+    "overall_accuracy": 0.8332968375307286,
+    "macro_precision": 0.5497403342399042,
+    "macro_recall": 0.583169487106651,
+    "macro_f1": 0.546031698330141,
+    "mean_iou": 0.4339485299934576,
+    "cohen_kappa": 0.770259596335106,
+    "predicted_nodata_on_valid_gt": 0
+  },
+  "per_class_metrics": {
+    "1": {
+      "class_id": 1,
+      "class_name": "Built-up",
+      "support": 173461,
+      "predicted_pixels": 187193,
+      "true_positive": 97561,
+      "false_positive": 89632,
+      "false_negative": 75900,
+      "precision": 0.5211786765530763,
+      "recall": 0.5624376661036198,
+      "f1": 0.5410226976548159,
+      "iou": 0.37082324501222
+    },
+    "2": {
+      "class_id": 2,
+      "class_name": "Cropland",
+      "support": 1491586,
+      "predicted_pixels": 1570323,
+      "true_positive": 1322897,
+      "false_positive": 247426,
+      "false_negative": 168689,
+      "precision": 0.8424362376402816,
+      "recall": 0.8869062863287802,
+      "f1": 0.8640994882604284,
+      "iou": 0.7607175798671889
+    },
+    "3": {
+      "class_id": 3,
+      "class_name": "Forest",
+      "support": 2546505,
+      "predicted_pixels": 2588476,
+      "true_positive": 2298243,
+      "false_positive": 290233,
+      "false_negative": 248262,
+      "precision": 0.8878749503568896,
+      "recall": 0.9025087325569752,
+      "f1": 0.8951320365158117,
+      "iou": 0.8101710485776268
+    },
+    "4": {
+      "class_id": 4,
+      "class_name": "Grassland",
+      "support": 431429,
+      "predicted_pixels": 275000,
+      "true_positive": 169232,
+      "false_positive": 105768,
+      "false_negative": 262197,
+      "precision": 0.6153890909090909,
+      "recall": 0.39225921298753674,
+      "f1": 0.4791196284410748,
+      "iou": 0.3150278203340674
+    },
+    "5": {
+      "class_id": 5,
+      "class_name": "Shrubland",
+      "support": 3716,
+      "predicted_pixels": 0,
+      "true_positive": 0,
+      "false_positive": 0,
+      "false_negative": 3716,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "iou": 0.0
+    },
+    "6": {
+      "class_id": 6,
+      "class_name": "Wetland",
+      "support": 197457,
+      "predicted_pixels": 198534,
+      "true_positive": 96329,
+      "false_positive": 102205,
+      "false_negative": 101128,
+      "precision": 0.48520152719433446,
+      "recall": 0.4878479871566974,
+      "f1": 0.4865211583091535,
+      "iou": 0.3214588436304904
+    },
+    "7": {
+      "class_id": 7,
+      "class_name": "Water",
+      "support": 1128402,
+      "predicted_pixels": 1158187,
+      "true_positive": 1078914,
+      "false_positive": 79273,
+      "false_negative": 49488,
+      "precision": 0.9315542308798147,
+      "recall": 0.9561432893596431,
+      "f1": 0.9436886121642324,
+      "iou": 0.8933810834868653
+    },
+    "8": {
+      "class_id": 8,
+      "class_name": "Bareland",
+      "support": 189707,
+      "predicted_pixels": 148696,
+      "true_positive": 73752,
+      "false_positive": 74944,
+      "false_negative": 115955,
+      "precision": 0.49599182224135147,
+      "recall": 0.3887679421423564,
+      "f1": 0.43588266061471087,
+      "iou": 0.2786764455830509
+    },
+    "9": {
+      "class_id": 9,
+      "class_name": "Mangrove Forest",
+      "support": 11963,
+      "predicted_pixels": 47817,
+      "true_positive": 8035,
+      "false_positive": 39782,
+      "false_negative": 3928,
+      "precision": 0.16803647238429847,
+      "recall": 0.6716542673242498,
+      "f1": 0.2688190030110405,
+      "iou": 0.15528070344960865
+    }
+  },
+  "shrubland_summary": {
+    "class_id": 5,
+    "class_name": "Shrubland",
+    "support": 3716,
+    "predicted_pixels": 0,
+    "true_positive": 0,
+    "false_positive": 0,
+    "false_negative": 3716,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "iou": 0.0,
+    "validation_tiles_with_shrubland": 5
+  },
+  "important_note": "These are global unique-pixel metrics after reconstructing each 512x512 validation scene from overlapping patches. They are not expected to be numerically identical to the training log, which averages metrics over validation patches."
+}
