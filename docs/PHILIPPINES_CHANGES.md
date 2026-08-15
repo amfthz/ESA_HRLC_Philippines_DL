@@ -71,6 +71,12 @@ Changes include support for:
 - saved epoch and monitored metric metadata,
 - fallback loading of a plain model state dictionary.
 
+The evaluation dataset call also differs from the original package:
+
+`return_y_long=True` -> `return_y_long=False`
+
+This behavior was used in the Philippines evaluation workflow and should be confirmed during the review before deciding whether it belongs in the generic reference implementation.
+
 ### `src/models/swin_unetr.py`
 
 Compatibility handling was added for differences in the MONAI `SwinUNETR` constructor.
@@ -80,6 +86,8 @@ The code first attempts construction with `img_size`. If that constructor signat
 The Philippines experiments were run with MONAI 1.2.0.
 
 `use_checkpoint=False` is used in the model constructor.
+
+This setting is separate from the MONAI constructor compatibility handling. It controls gradient checkpointing inside Swin-UNETR and should therefore be reviewed explicitly when defining the common reference version.
 
 ---
 
@@ -331,9 +339,11 @@ The original working directories and safety backups remain preserved separately 
 Before defining the final stable reference version, the following should be reviewed with Luigi:
 
 1. generic compatibility changes versus the original UNIPV implementation,
-2. portability of Philippines-specific paths,
-3. organization of CC50/reference-preparation utilities,
-4. final baseline checkpoint selection,
-5. inference configuration and workflow.
+2. evaluation behavior (`return_y_long=False`) versus the original evaluator,
+3. the reference setting for Swin-UNETR `use_checkpoint`,
+4. portability of Philippines-specific paths,
+5. organization of CC50/reference-preparation utilities,
+6. final baseline checkpoint selection,
+7. inference configuration and workflow.
 
 No final production reference is declared by this handover version before that review.
